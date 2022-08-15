@@ -1,23 +1,21 @@
-import tkinter as tk
+import tkinter as tk # gui
 from tkinter import * # all necessary tkinter commands
-import time
 
 ws = tk.Tk() # canvas
 ws.title('fibonacci numbers python') # canvas title
-#ws.geometry('400x300') # canvas height and width
 
-canvas1 = tk.Canvas(width = 400, height = 300)
-canvas1.pack()
+canvas1 = tk.Canvas(width = 400, height = 300) # canvas height and width
+canvas1.pack() # create canvas
 
 name_Tf = tk.Entry(ws) # create entry
 name_Tf.bind('<Return>', (lambda event: welMsg())) # function is called when enter is pressed
-canvas1.create_window(200, 140, window=name_Tf)
+canvas1.create_window(200, 140, window=name_Tf) # shows entry in canvas
 
 instructions = tk.Label(ws, text='Enter Number & hit enter key') # instructions for user
-canvas1.create_window(200, 110, window=instructions)
+canvas1.create_window(200, 110, window=instructions) # show instructions
 
-ws.btn = tk.Button(ws, text = 'Enter', bd = '5', command= (lambda: welMsg()))
-canvas1.create_window(200, 180, window=ws.btn)
+ws.btn = tk.Button(ws, text = 'Enter', bd = '5', command= (lambda: welMsg())) # create button that runs welMsg
+canvas1.create_window(200, 180, window=ws.btn) # show button
 
 def welMsg(): # define function
     fib_terms = [0, 1]  # first two fibonacci terms
@@ -30,13 +28,13 @@ def welMsg(): # define function
 
     if user_input in fib_terms: # entry get is found in list
         result = tk.Label(ws, text='Yes. ' + str(user_input) + ' is a fibonacci number.') # print result & entry value to canvas
-        canvas1.create_window(200, 200, window=result)
+        canvas1.create_window(200, 200, window=result) # show result in canvas
 
     else: # entry get is not found in list
         result = tk.Label(ws, text='No. ' + str(user_input) + ' is NOT a fibonacci number.') # print result & entry value to canvas
-        canvas1.create_window(200, 200, window=result)
-        result2= tk.Label(ws, text='The closest lower fibonacci number is ' + str(fib_terms[-2]))
-        canvas1.create_window(200, 230, window=result2)
+        canvas1.create_window(200, 200, window=result) # show result in canvas
+        result2= tk.Label(ws, text='The closest lower fibonacci number is ' + str(fib_terms[-2])) # last 2 fibonacci numbers in list
+        canvas1.create_window(200, 230, window=result2) # shows result2 in canvas
 
 
 ws.mainloop() # run tkinter event loop
