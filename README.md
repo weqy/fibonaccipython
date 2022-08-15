@@ -1,2 +1,4 @@
 # fibonaccipython
-a program that checks whether a number belongs to fibonacci or not using python and tkinter
+a program using python and tkinter that checks whether a number belongs to fibonacci or not.
+number and canvas updates each time button is clicked.
+both button and enter key can be used to call function.
